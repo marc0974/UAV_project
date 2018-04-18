@@ -14,8 +14,6 @@ pedestrianTrackingMain::~pedestrianTrackingMain(void)
 
 void pedestrianTrackingMain::v_exec(Input_t& input, Output_t& output)
 {
-    m_cameraProcess.v_runSlam(input,output);
-
     switch(input.dM) // Define algo behaviour
     {
     case dronePedestrianTrackingMode::init:
@@ -54,12 +52,13 @@ void pedestrianTrackingMain::v_reset(Input_t& input)
 
 void pedestrianTrackingMain::v_run(Input_t& input, Output_t output)
 {
-    
     m_pedTrack.v_run(input,output);
+    m_cameraProcess.v_runSlam(input,output);
     
 }
 
 void pedestrianTrackingMain::v_stop()
 {
    m_pedTrack.v_reset();
+   m_cameraProcess.v_reset();
 }

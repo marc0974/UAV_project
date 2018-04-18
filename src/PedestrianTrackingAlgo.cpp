@@ -60,3 +60,10 @@ void PedestrianTrackingAlgo::v_run(Input_t& input, Output_t output)
         }
     }
 }
+
+void PedestrianTrackingAlgo::v_compute3DpedPos(const Input_t& input, const Output_t& output)
+{
+    //computes 3D from camera position estimation, drone position, and position on the image.
+    // Need computation of homogeneous Matrix, CAM2DRONE 6doF, ground plane estimation,
+    // and foot print of the object
+}

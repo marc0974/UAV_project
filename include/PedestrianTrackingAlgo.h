@@ -15,6 +15,7 @@ public:
     void v_init(Input_t& input);
     void v_reset();
     void v_run(Input_t& input, Output_t output);
+    void v_compute3DpedPos(const Input_t& input, const Output_t& output);
 private:
 
     ImageProcess    m_imageProcess;

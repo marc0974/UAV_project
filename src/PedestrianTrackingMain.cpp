@@ -54,7 +54,8 @@ void pedestrianTrackingMain::v_run(Input_t& input, Output_t output)
 {
     m_pedTrack.v_run(input,output);
     m_cameraProcess.v_runSlam(input,output);
-    
+    m_pedTrack.v_compute3DpedPos(input,output);
+    m_droneProcess.v_run(input,output);
 }
 
 void pedestrianTrackingMain::v_stop()
